@@ -12,7 +12,7 @@ ssh bcaetano@lxplus.cern.ch
 Run the following commands to build the environment.
 
 ```
-source ~/private/SND/startup.sh && Run
+source ~/private/SND/startAliBuild.sh && Run
 ```
 
 ### Regular
