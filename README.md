@@ -1,5 +1,7 @@
 # SND@LHC
 
+[SND@LHC github](https://github.com/SND-LHC/sndsw)
+
 ## Setting up
 
 First connect to the server and type the password.
