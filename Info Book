@@ -1,0 +1,257 @@
+lxplus.cern.ch:~/private/Startup:
+	ssh bcaetano@lxplus.cern.ch
+	source ~/private/SND/startup.sh && Run
+
+
+Files/folders created:
+	/shipLHC/scripts/Internships.py
+	/shipLHC/scripts/TestFile.py
+	/shipLHC/scripts/LookingAtNeutrinoMC.py
+	startup.sh
+	/shipLHC/Test/
+	/shipLHC/scripts/DataDump/
+	/shipLHC/SimResults/
+
+Run simulations: (nos files estão as opções de sim mostradas)
+	Na pasta em que se quer guardar a simulação: (exemplos)
+		python ../run_simSND.py --PG --pID 2212 -n 10 --Estart 10.0 --Eend 11.0 --EVx -26.0 --EVy 34.0 --EVz 280
+		python ../run_digiSND.py -g [geoFile] -f [inputFile]
+
+		python ../run_simSND.py -n 5 -i 5 --Genie 0 -f /eos/experiment/sndlhc/MonteCarlo/FLUKA/neutrino_up_14TeV/SND_neutrinos_14TeV_20M.root
+
+
+python /macro/getGeoInformation.py -g [Geometry file] -l [Level of detail]
+
+
+MCTrack Documentation: https://github.com/SND-LHC/sndsw/blob/master/shipdata/ShipMCTrack.h
+
+
+Files com os neutrinos:
+	/eos/experiment/sndlhc/MonteCarlo/FLUKA
+
+
+DebugRun -> up 14TeV
+
+
+cernP com pass e levou com chmod 0400
+
+
+crontab -e:
+ONLY Internship.py
+
+_______ NA TORRE __________
+
+* * * * * rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 5; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 10; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 15; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 20; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 25; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 30; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 35; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 40; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 45; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 50; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 55; rsync --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/Internship.py lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+
+
+_______ NO PORTÁTIL __________
+
+* * * * * rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 5; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 10; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 15; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 20; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 25; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 30; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 35; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 40; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 45; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 50; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+* * * * * sleep 55; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+
+
+
+
+
+
+
+
+* * * * * rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 5; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 10; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 15; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 20; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 25; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 30; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 35; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 40; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 45; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 50; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+* * * * * sleep 55; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" /home/bruno/Documents/SND/sndsw/python/SndlhcTracking.py  lxplus.cern.ch:~/private/SND/sndsw/python/
+
+
+
+
+
+
+
+
+ALL SCRIPTS
+
+__TORRE__
+
+* * * * * rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 5; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 10; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 15; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 20; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 25; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 30; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 35; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 40; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 45; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 50; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+* * * * * sleep 55; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" ~/Documents/sndsw/shipLHC/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/DataDump/* ~/Documents/sndsw/shipLHC/scripts/DataDump/; rsync -a --rsh="sshpass -f /home/bruno-semions/Documents/cernP ssh -l bcaetano" lxplus.cern.ch:~/private/SND/sndsw/shipLHC/SimResults/* ~/Documents/sndsw/shipLHC/SimResults/
+
+
+
+Em relação à análise dos dados, esta é uma apresentação de um estudo muito preliminar sobre interações dos neutrinos no sistema de muões, para se quiseres dar uma vista de olhos. Eu queria que explorasses um bocadinho mais para além disto, mas para ser muito sincero não tenho muitas certezas sobre por onde é que devíamos começar. Acho que um bom ponto seria pegar só em eventos de neutrinos de muão (se for preciso a nova simulação vem só com o argumento para esses: 14, -14) e tentar ver se conseguímos ver alguma coisa de interesse em eventos que começam no segundo bloco de ferro, mas depois falamos sobre isto sem ser por mensagem para ficar mais claro. (Ver pdf)
+
+
+
+
+
+
+
+
+Survey-MuFiScifi.py: line 1210
+Encontrar função que mostra graficamente os hits de cada evento
+python file -c function
+
+
+python eventDisplay.py -f /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/sndLHC.Genie-TGeant4 -g /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/geofile_full.Genie-TGeant4.root -p /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/ship.params.Genie-TGeant4.root -o DataDump/display1
+
+
+
+python ../UpdatedSurvey-MufiScifi.py -r -1 -f /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/geofile_full.Genie-TGeant4.root -c Internship
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+            for aTrack in Reco_MuonTracks:
+                aTrack.Delete()      #Check if muon is detected
+            Reco_MuonTracks.Clear()
+            rc = trackTask.ExecuteTask("DS")
+            print(Reco_MuonTracks.GetEntries())
+            if Reco_MuonTracks.GetEntries()==1:
+                print("\n\nHII\n\n")
+                theTrack = Reco_MuonTracks[0]
+
+                if theTrack.getFitStatus().isFitConverged():   # for H8 where only two planes / proj were avaia$
+                    NMuonDet+=1
+                    WMuonDet+=eventGST.FLUKA_weight                                 #Muon detected
+
+                    if is_muonGen == 1:
+                        NMuonGenDet+=1
+                        WMuonGenDet+=eventGST.FLUKA_weight                              #Muon detected and gene$
+
+
+            if event.MCTrack[0].GetStartZ() >= zmin and event.MCTrack[0].GetStartZ() <= zmax: #Check if in corr$
+                NCorrectArea+=1
+                WCorrectArea+=eventGST.FLUKA_weight
+                if is_muonGen == 1:                             #Check if correct area and Muon Gen
+                    NMuonGenArea+=1
+                    WMuonGenArea+=eventGST.FLUKA_weight
+
+
+            if NEvents==NEventsToCheck: break
+
+
+    data.close()
+    if print_type ==1:
+        print(f"\n\nEvents:\n     Total = {NEvents}\n     In correct area = {NCorrectArea}\n     In this area a$
+        print(f"\nWeights:\n     Total = {WEvents:.9}\n     In correct area = {WCorrectArea:.9}\n     In this a$
+        print(f"\nEfficiencies (%):\n     Correct area = {100*WCorrectArea/WEvents:.7}\n     Muon generated = {$
+    #gst.FLUKA_weight
+
+    if is_histograms==1:
+        #Create histogram on Starting Vertex
+        detector_x_range = [-88.0188, 3.6492]
+        detector_y_range = [-2.3017, 71.5810]
+        target_z_range   = [358.4387, 574.4321]
+
+        n_bins = 200
+        mc_lumi = 150 #* n_files_read       #luminosity of each file; 150 is total lumi
+        target_lumi = 150                   #Scale lumi to 400
+        lumi_weight = target_lumi/mc_lumi
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+To do:
+	Plot de evento com o 2D cenas
