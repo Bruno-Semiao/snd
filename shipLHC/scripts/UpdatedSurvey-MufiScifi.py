@@ -1319,7 +1319,6 @@ def Internship():
 
 
 
-
         if not exists(gst_file):
             print("\n\ngst file not found!\n\n")
             exit()
