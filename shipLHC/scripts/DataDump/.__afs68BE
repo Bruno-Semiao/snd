@@ -1,0 +1,5 @@
+usage: UpdatedSurvey-MufiScifi.py [-h] -r RUNNUMBER [-p PATH] [-f FNAME] -g GEOFILE [-b HEARTBEAT]
+                                  [-c COMMAND] [-n NEVENTS] [-t TRACKTYPE]
+                                  [--remakeScifiClusters REMAKESCIFICLUSTERS] [-refc REFCHANNEL]
+                                  [-correct CORRECTTIME]
+UpdatedSurvey-MufiScifi.py: error: the following arguments are required: -r/--runNumber
