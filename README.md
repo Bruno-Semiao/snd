@@ -87,6 +87,11 @@ To get geo information of the detector run:
 python /macro/getGeoInformation.py -g [Geometry file] -l [Level of detail]
 ```
 
+Currently using this geofile:
+```
+/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/geofile_full.Genie-TGeant4.root
+```
+
 ### Track Information
 Class defining the tracks can be found [here](https://github.com/SND-LHC/sndsw/blob/master/shipdata/ShipMCTrack.h).
 
