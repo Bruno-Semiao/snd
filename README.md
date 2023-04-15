@@ -96,3 +96,28 @@ Currently using this geofile:
 Class defining the tracks can be found [here](https://github.com/SND-LHC/sndsw/blob/master/shipdata/ShipMCTrack.h).
 
 
+
+
+## Calculating Efficiencies
+
+Apply constraints in class Internships in file:
+```
+/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/UpdatedSurvey-MufiScifi.py
+```
+
+To run simulations do:
+```
+/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/GetWeightsForEff.sh
+```
+
+Finally use the file created in:
+```
+/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/DataDump/EventsData.csv
+```
+
+to calculate the percentages, code in file:
+```
+/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/CalculateEfficiencies.py
+```
+
+
