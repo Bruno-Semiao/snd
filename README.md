@@ -133,3 +133,19 @@ root [2] geo->Export("geofile_sndlhc_TI18_V7.gdml")
 ```
 gevgen_fnal -f "/eos/experiment/sndlhc/MonteCarlo/FLUKA/neutrino_up_14TeV/SND_neutrinos_14TeV_20M_gsimple.root,,-14,14" -g /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/geofile_sndlhc_TI18_V7.gdml -t "+volMuFilter" -L "cm" -D "g_cm3" -e 2.0e17 -o genie_events --tune SNDG18_02a_01_000 --cross-sections /eos/experiment/sndlhc/MonteCarlo/Neutrinos/Genie/splines/genie_splines_GENIE_v32_SNDG18_02a_01_000.xml
 ```
+
+Conversions:
+```
+gntpc -i genie_events.0.ghep.root -f gst -o genie_events.gst.root -c
+addAuxiliaryToGST genie_events.0.ghep.root genie_events.gst.root
+```
+
+Run simulation:
+```
+python ~/private/SND/sndsw/shipLHC/run_simSND.py --Genie 4 -f ~/private/SND/sndsw/shipLHC/SimResults/genie_events.gst.root -i 0 -n 100
+```
+
+Digitize data:
+```
+python ~/private/SND/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.root -f sndLHC.Genie-TGeant4.root
+```
