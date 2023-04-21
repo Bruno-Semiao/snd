@@ -120,4 +120,12 @@ to calculate the percentages, code in file:
 /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/CalculateEfficiencies.py
 ```
 
+## Generating Simulations
 
+Get gdml file:
+```
+root [0] TFile * f = new TFile("/eos/experiment/sndlhc/convertedData/commissioning/TI18/geofile_sndlhc_TI18_V7_22November2022.root")
+root [1] TGeoManager * geo = (TGeoManager*) f->Get("FAIRGeom")
+root [2] geo->Export("geofile_sndlhc_TI18_V7.gdml")
+
+```
