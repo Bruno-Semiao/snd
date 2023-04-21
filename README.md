@@ -131,5 +131,5 @@ root [2] geo->Export("geofile_sndlhc_TI18_V7.gdml")
 ```
 
 ```
-gevgen_fnal -f "/eos/experiment/sndlhc/MonteCarlo/FLUKA/neutrino_up_14TeV/SND_neutrinos_14TeV_20M_gsimple.root,,-14,14" -g /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/MuNeutrino_up_14TeV_3032/geofile_sndlhc_TI18_V7.gdml -t "+volMuFilter" -L "cm" -D "g_cm3" -e 2.0e17 -o genie_events --tune SNDG18_02a_01_000 --cross-sections /eos/experiment/sndlhc/MonteCarlo/Neutrinos/Genie/splines/genie_splines_GENIE_v32_SNDG18_02a_01_000.xml
+gevgen_fnal -f "/eos/experiment/sndlhc/MonteCarlo/FLUKA/neutrino_up_14TeV/SND_neutrinos_14TeV_20M_gsimple.root,,-14,14" -g /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/geofile_sndlhc_TI18_V7.gdml -t "+volMuFilter" -L "cm" -D "g_cm3" -e 2.0e17 -o genie_events --tune SNDG18_02a_01_000 --cross-sections /eos/experiment/sndlhc/MonteCarlo/Neutrinos/Genie/splines/genie_splines_GENIE_v32_SNDG18_02a_01_000.xml
 ```
