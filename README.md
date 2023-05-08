@@ -19,10 +19,16 @@ source ~/private/SND/startAliBuild.sh && Run
 
 ### Regular
 
-Run the following commands to setup the environment (alienv).
+OLD WAY: Run the following commands to setup the environment (alienv).
 ```
 source ~/private/SND/startup.sh && Run
 ```
+NEW WAY:
+```
+source /cvmfs/sndlhc.cern.ch/SNDLHC-2023/Jan22/setUp.sh
+alienv enter sndsw/latest
+```
+
 
 ### Keeping things up to date
 
