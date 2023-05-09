@@ -155,3 +155,15 @@ Digitize data:
 ```
 python ~/private/SND/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.root -f sndLHC.Genie-TGeant4.root
 ```
+
+## Plotting Events
+Run:
+```
+python -i ../2dEventDisplay.py -p /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/00000/ -f sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/user/b/bcaetano/public/geofile_full.Genie-TGeant4.root 
+```
+
+To  copy plot to cumputer:
+```
+rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" lxplus.cern.ch:/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/plots/*.png ~/Documents/images/ -a
+```
+
