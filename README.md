@@ -159,8 +159,13 @@ python ~/private/SND/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.
 ## Plotting Events
 Run:
 ```
-python -i /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/2dEventDisplay.py -p /afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/00000/ -f sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/user/b/bcaetano/public/geofile_full.Genie-TGeant4.root 
+python -i /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/2dEventDisplay.py -p /afs/cern.ch/work/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/00000/ -f sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/work/b/bcaetano/public/geofile_full.Genie-TGeant4.root 
 ```
+Then:
+```
+loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = -1)
+```
+
 
 To  copy plot to cumputer:
 ```
