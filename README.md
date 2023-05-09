@@ -169,6 +169,6 @@ loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = -1)
 
 To  copy plot to cumputer:
 ```
-rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" lxplus.cern.ch:/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/plots/*.png ~/Documents/images/ -a
+rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" lxplus.cern.ch:/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/plots/00100 ~/Documents/images/ -a
 ```
 
