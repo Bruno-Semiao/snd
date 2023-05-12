@@ -161,9 +161,9 @@ Run:
 ```
 python -i /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/2dEventDisplay.py -p /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/00100/ -f sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/00100/geofile_full.Genie-TGeant4.root 
 ```
-Then:
+Then: (withHoughTrack - New Method; withTrack - Old Method)
 ```
-loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = -1)
+loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = 3)
 ```
 
 
