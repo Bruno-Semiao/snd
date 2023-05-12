@@ -1,6 +1,6 @@
 # SND@LHC
+Follow the instruction at [SND@LHC github](https://github.com/SND-LHC/sndsw) to install the software.
 
-[SND@LHC github](https://github.com/SND-LHC/sndsw)
 
 ## Setting up
 
