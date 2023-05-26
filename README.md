@@ -1,5 +1,6 @@
 # SND@LHC
 Follow the instructions at [SND@LHC github](https://github.com/SND-LHC/sndsw) to install the software.
+All files mentioned are either in the collaboration software or in this repository.
 
 
 ## Setting up
