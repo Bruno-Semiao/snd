@@ -1,0 +1,786 @@
+00000,0,Not Detected
+00000,4,Not Detected
+00000,5,Not Gen and Not Detected
+00000,7,Not Detected
+00000,12,Not Gen and Not Detected
+00000,21,Not Gen and Not Detected
+00000,22,Not Detected
+00000,23,Not Gen and Not Detected
+00000,25,Not Detected
+00000,30,Not Gen and Not Detected
+00000,32,Not Detected
+00000,35,Not Detected
+00000,36,Not Detected
+00000,37,Detected Good
+00000,38,Not Gen and Not Detected
+00000,43,Not Detected
+00000,44,Not Detected
+00000,48,Not Gen and Not Detected
+00000,49,Not Detected
+00000,50,Not Detected
+00000,55,Not Detected
+00000,57,Not Detected
+00000,61,Detected Good
+00000,63,Not Detected
+00000,75,Not Detected
+00000,79,Not Detected
+00000,80,Not Detected
+00000,81,Detected Good
+00000,82,Not Gen and Not Detected
+00000,83,Not Detected
+00000,93,Not Detected
+00000,94,Not Detected
+00000,97,Not Detected
+00000,99,Not Detected
+00100,0,Not Detected
+00100,1,Not Detected
+00100,2,Not Gen and Not Detected
+00100,4,Not Gen and Not Detected
+00100,7,Not Gen and Not Detected
+00100,8,Not Detected
+00100,9,Not Detected
+00100,15,Not Detected
+00100,19,Not Detected
+00100,23,Not Gen and Not Detected
+00100,29,Not Gen and Not Detected
+00100,31,Not Detected
+00100,39,Not Detected
+00100,41,Not Gen and Not Detected
+00100,44,Not Detected
+00100,46,Not Detected
+00100,47,Not Detected
+00100,51,Not Detected
+00100,55,Not Gen and Not Detected
+00100,56,Not Gen and Not Detected
+00100,60,Detected Good
+00100,62,Not Detected
+00100,67,Detected Good
+00100,68,Not Gen and Not Detected
+00100,71,Not Detected
+00100,73,Not Detected
+00100,80,Not Gen and Not Detected
+00100,82,Not Detected
+00100,86,Not Gen and Not Detected
+00100,88,Not Gen and Not Detected
+00100,89,Not Gen and Not Detected
+00100,90,Not Detected
+00100,92,Not Detected
+00100,96,Not Detected
+00100,99,Not Detected
+00200,2,Not Gen and Not Detected
+00200,3,Not Detected
+00200,6,Not Gen and Not Detected
+00200,8,Detected Good
+00200,9,Detected Good
+00200,10,Not Detected
+00200,13,Detected Good
+00200,18,Not Detected
+00200,21,Not Detected
+00200,22,Not Detected
+00200,23,Detected Good
+00200,24,Not Gen and Not Detected
+00200,26,Not Detected
+00200,33,Not Gen and Not Detected
+00200,35,Not Gen and Not Detected
+00200,36,Not Detected
+00200,37,Detected Good
+00200,44,Not Detected
+00200,45,Not Detected
+00200,47,Not Detected
+00200,51,Not Detected
+00200,57,Detected Good
+00200,62,Not Gen and Not Detected
+00200,63,Not Detected
+00200,68,Not Detected
+00200,70,Detected Good
+00200,72,Not Detected
+00200,73,Detected Good
+00200,76,Detected Good
+00200,79,Not Detected
+00200,80,Not Gen and Not Detected
+00200,81,Not Gen and Not Detected
+00200,82,Detected Good
+00200,84,Not Detected
+00200,88,False Positive
+00200,90,Not Detected
+00200,93,Not Detected
+00200,94,Not Detected
+00200,95,Not Detected
+00300,0,Not Detected
+00300,1,Not Detected
+00300,5,Not Detected
+00300,6,Not Detected
+00300,10,Not Detected
+00300,11,Not Detected
+00300,12,Not Detected
+00300,14,Not Detected
+00300,17,Not Gen and Not Detected
+00300,18,Not Detected
+00300,19,Not Gen and Not Detected
+00300,23,Detected Good
+00300,26,Not Detected
+00300,29,Detected Good
+00300,32,Not Detected
+00300,34,Not Gen and Not Detected
+00300,35,Detected Good
+00300,38,Detected Good
+00300,39,Not Detected
+00300,43,Not Detected
+00300,47,Not Detected
+00300,48,Not Detected
+00300,49,Not Detected
+00300,52,Not Gen and Not Detected
+00300,53,Not Gen and Not Detected
+00300,58,Not Gen and Not Detected
+00300,60,Not Gen and Not Detected
+00300,62,Not Detected
+00300,63,Not Gen and Not Detected
+00300,70,Detected Good
+00300,79,Not Detected
+00300,82,Not Detected
+00300,83,Not Detected
+00300,87,Not Detected
+00300,93,Not Detected
+00300,94,Not Detected
+00300,96,Not Detected
+00000,0,Not Detected
+00000,4,Not Detected
+00000,5,Not Gen and Not Detected
+00000,7,Not Detected
+00000,12,Not Gen and Not Detected
+00000,21,Not Gen and Not Detected
+00000,22,Not Detected
+00000,23,Not Gen and Not Detected
+00000,25,Not Detected
+00000,30,Not Gen and Not Detected
+00000,32,Not Detected
+00000,35,Not Detected
+00000,36,Not Detected
+00000,37,Detected Good
+00000,38,Not Gen and Not Detected
+00000,43,Not Detected
+00000,44,Not Detected
+00000,48,Not Gen and Not Detected
+00000,49,Not Detected
+00000,50,Not Detected
+00000,55,Not Detected
+00000,57,Not Detected
+00000,61,Detected Good
+00000,63,Not Detected
+00000,75,Not Detected
+00000,79,Not Detected
+00000,80,Not Detected
+00000,81,Detected Good
+00000,82,Not Gen and Not Detected
+00000,83,Not Detected
+00000,93,Not Detected
+00000,94,Not Detected
+00000,97,Not Detected
+00000,99,Not Detected
+00100,0,Not Detected
+00100,1,Not Detected
+00100,2,Not Gen and Not Detected
+00100,4,Not Gen and Not Detected
+00100,7,Not Gen and Not Detected
+00100,8,Not Detected
+00100,9,Not Detected
+00100,15,Not Detected
+00100,19,Not Detected
+00100,23,Not Gen and Not Detected
+00100,29,Not Gen and Not Detected
+00100,31,Not Detected
+00100,39,Not Detected
+00100,41,Not Gen and Not Detected
+00100,44,Not Detected
+00100,46,Not Detected
+00100,47,Not Detected
+00100,51,Not Detected
+00100,55,Not Gen and Not Detected
+00100,56,Not Gen and Not Detected
+00100,60,Detected Good
+00100,62,Not Detected
+00100,67,Detected Good
+00100,68,Not Gen and Not Detected
+00100,71,Not Detected
+00100,73,Not Detected
+00100,80,Not Gen and Not Detected
+00100,82,Not Detected
+00100,86,Not Gen and Not Detected
+00100,88,Not Gen and Not Detected
+00100,89,Not Gen and Not Detected
+00100,90,Not Detected
+00100,92,Not Detected
+00100,96,Not Detected
+00100,99,Not Detected
+00200,2,Not Gen and Not Detected
+00200,3,Not Detected
+00200,6,Not Gen and Not Detected
+00200,8,Detected Good
+00200,9,Detected Good
+00200,10,Not Detected
+00200,13,Detected Good
+00200,18,Not Detected
+00200,21,Not Detected
+00200,22,Not Detected
+00200,23,Detected Good
+00200,24,Not Gen and Not Detected
+00200,26,Not Detected
+00200,33,Not Gen and Not Detected
+00200,35,Not Gen and Not Detected
+00200,36,Not Detected
+00200,37,Detected Good
+00200,44,Not Detected
+00200,45,Not Detected
+00200,47,Not Detected
+00200,51,Not Detected
+00200,57,Detected Good
+00200,62,Not Gen and Not Detected
+00200,63,Not Detected
+00200,68,Not Detected
+00200,70,Detected Good
+00200,72,Not Detected
+00200,73,Detected Good
+00200,76,Detected Good
+00200,79,Not Detected
+00200,80,Not Gen and Not Detected
+00200,81,Not Gen and Not Detected
+00200,82,Detected Good
+00200,84,Not Detected
+00200,88,False Positive
+00200,90,Not Detected
+00200,93,Not Detected
+00200,94,Not Detected
+00200,95,Not Detected
+00300,0,Not Detected
+00300,1,Not Detected
+00300,5,Not Detected
+00300,6,Not Detected
+00300,10,Not Detected
+00300,11,Not Detected
+00300,12,Not Detected
+00300,14,Not Detected
+00300,17,Not Gen and Not Detected
+00300,18,Not Detected
+00300,19,Not Gen and Not Detected
+00300,23,Detected Good
+00300,26,Not Detected
+00300,29,Detected Good
+00300,32,Not Detected
+00300,34,Not Gen and Not Detected
+00300,35,Detected Good
+00300,38,Detected Good
+00300,39,Not Detected
+00300,43,Not Detected
+00300,47,Not Detected
+00300,48,Not Detected
+00300,49,Not Detected
+00300,52,Not Gen and Not Detected
+00300,53,Not Gen and Not Detected
+00300,58,Not Gen and Not Detected
+00300,60,Not Gen and Not Detected
+00300,62,Not Detected
+00300,63,Not Gen and Not Detected
+00300,70,Detected Good
+00300,79,Not Detected
+00300,82,Not Detected
+00300,83,Not Detected
+00300,87,Not Detected
+00300,93,Not Detected
+00300,94,Not Detected
+00300,96,Not Detected
+00400,2,Not Gen and Not Detected
+00400,4,Not Gen and Not Detected
+00400,6,Not Detected
+00400,8,Detected Good
+00400,9,Not Gen and Not Detected
+00400,10,Not Detected
+00400,11,Detected Good
+00400,14,Not Gen and Not Detected
+00400,15,Detected Good
+00400,16,Not Detected
+00400,19,Not Detected
+00400,26,Not Detected
+00400,27,False Positive
+00400,28,Not Detected
+00400,33,Not Gen and Not Detected
+00400,44,Not Detected
+00400,45,Not Gen and Not Detected
+00400,49,Not Detected
+00400,50,Not Detected
+00400,51,Not Detected
+00400,54,Not Detected
+00400,61,Not Detected
+00400,62,Not Detected
+00400,63,Not Detected
+00400,65,Not Detected
+00400,66,Not Gen and Not Detected
+00400,68,Not Detected
+00400,72,Detected Good
+00400,73,Not Detected
+00400,74,Not Detected
+00400,76,Detected Good
+00400,80,Not Detected
+00400,81,Detected Good
+00400,83,Detected Good
+00400,84,Not Detected
+00400,86,Detected Good
+00500,1,Not Gen and Not Detected
+00500,3,Not Detected
+00500,4,Detected Good
+00500,5,Not Detected
+00500,11,Not Detected
+00500,21,Not Detected
+00500,22,Not Detected
+00500,25,Not Detected
+00500,26,Detected Good
+00500,27,Detected Good
+00500,39,Not Detected
+00500,42,Detected Good
+00500,43,Not Gen and Not Detected
+00500,45,Detected Good
+00500,46,Not Detected
+00500,53,Not Gen and Not Detected
+00500,55,Not Gen and Not Detected
+00500,56,Not Gen and Not Detected
+00500,57,Detected Good
+00500,58,Not Detected
+00500,59,Not Detected
+00500,61,Not Detected
+00500,62,Not Detected
+00500,65,Not Detected
+00500,66,Not Detected
+00500,68,Not Detected
+00500,69,Not Gen and Not Detected
+00500,70,Not Detected
+00500,71,Not Detected
+00500,74,Not Detected
+00500,75,Not Detected
+00500,76,Detected Good
+00500,79,Not Detected
+00500,80,Detected Good
+00500,82,Not Detected
+00500,85,Not Detected
+00500,87,Detected Good
+00500,89,Detected Good
+00500,95,Not Detected
+00500,96,Not Gen and Not Detected
+00600,1,Not Detected
+00600,2,Not Gen and Not Detected
+00600,8,Not Gen and Not Detected
+00600,13,Not Detected
+00600,14,Not Gen and Not Detected
+00600,15,Not Detected
+00600,17,Detected Good
+00600,18,Not Gen and Not Detected
+00600,21,Not Gen and Not Detected
+00600,22,Not Gen and Not Detected
+00600,23,Not Detected
+00600,24,Not Detected
+00600,33,Not Gen and Not Detected
+00600,40,Not Gen and Not Detected
+00600,42,Detected Good
+00600,46,Not Gen and Not Detected
+00600,51,Not Gen and Not Detected
+00600,53,Not Detected
+00600,58,Not Detected
+00600,59,Not Detected
+00600,60,Not Detected
+00600,61,Not Detected
+00600,64,Detected Good
+00600,66,Not Detected
+00600,67,Not Detected
+00600,69,Not Detected
+00600,73,Not Detected
+00600,75,Detected Good
+00600,79,Not Detected
+00600,80,Not Detected
+00600,82,Not Detected
+00600,85,Not Detected
+00600,87,Not Gen and Not Detected
+00600,88,Detected Good
+00600,90,Not Detected
+00600,91,Not Detected
+00600,93,Not Gen and Not Detected
+00600,94,Not Detected
+00600,95,Detected Good
+00600,96,Not Gen and Not Detected
+00600,97,Not Detected
+00700,2,Not Detected
+00700,10,Detected Good
+00700,14,Not Detected
+00700,21,Not Detected
+00700,22,Not Detected
+00700,26,Detected Good
+00700,27,Detected Good
+00700,30,Not Detected
+00700,31,Detected Good
+00700,33,Not Detected
+00700,35,Not Detected
+00700,39,Not Detected
+00700,42,Not Detected
+00700,46,Not Detected
+00700,49,Not Detected
+00700,52,Not Detected
+00700,54,Not Detected
+00700,56,Not Detected
+00700,60,Not Detected
+00700,61,Not Gen and Not Detected
+00700,65,Not Detected
+00700,67,Detected Good
+00700,70,Not Gen and Not Detected
+00700,71,Not Gen and Not Detected
+00700,73,Not Detected
+00700,74,Not Detected
+00700,75,Not Detected
+00700,80,Not Detected
+00700,84,Detected Good
+00700,86,Detected Good
+00700,87,Not Detected
+00700,89,Detected Good
+00700,95,Not Detected
+00700,96,Not Detected
+00700,97,Not Detected
+00700,99,Not Detected
+00800,0,Not Gen and Not Detected
+00800,4,Not Detected
+00800,6,Not Detected
+00800,7,Not Detected
+00800,9,Not Gen and Not Detected
+00800,11,Not Detected
+00800,14,Not Gen and Not Detected
+00800,17,Not Gen and Not Detected
+00800,18,Detected Good
+00800,20,Not Detected
+00800,21,Detected Good
+00800,22,Not Detected
+00800,25,Not Detected
+00800,29,Not Detected
+00800,31,Not Detected
+00800,33,Not Gen and Not Detected
+00800,34,Not Detected
+00800,36,Not Detected
+00800,45,Not Detected
+00800,47,Not Gen and Not Detected
+00800,48,Not Detected
+00800,51,Not Detected
+00800,53,Detected Good
+00800,64,Not Detected
+00800,65,Not Detected
+00800,66,Not Detected
+00800,74,Detected Good
+00800,78,Not Detected
+00800,98,Not Detected
+00900,2,Not Detected
+00900,7,Not Detected
+00900,8,Not Detected
+00900,17,Detected Good
+00900,20,Not Detected
+00900,22,Not Detected
+00900,26,Not Gen and Not Detected
+00900,29,Not Detected
+00900,30,Not Gen and Not Detected
+00900,31,Not Detected
+00900,33,Not Gen and Not Detected
+00900,42,Not Detected
+00900,45,Detected Good
+00900,46,Not Detected
+00900,51,Detected Good
+00900,52,Not Detected
+00900,53,Not Detected
+00900,55,Not Detected
+00900,56,Detected Good
+00900,60,Not Detected
+00900,61,Not Detected
+00900,62,Detected Good
+00900,63,Not Detected
+00900,64,Not Detected
+00900,67,Not Gen and Not Detected
+00900,69,Detected Good
+00900,71,Not Detected
+00900,73,Not Gen and Not Detected
+00900,76,Not Detected
+00900,78,Not Detected
+00900,79,Not Gen and Not Detected
+00900,82,Not Detected
+00900,83,Not Detected
+00900,84,Not Detected
+00900,85,Not Detected
+00900,86,Not Detected
+00900,88,Not Detected
+00900,89,Not Detected
+00900,95,Not Detected
+00900,97,Not Detected
+01000,5,Not Detected
+01000,9,Not Gen and Not Detected
+01000,13,Not Gen and Not Detected
+01000,15,Not Gen and Not Detected
+01000,18,Not Detected
+01000,21,Not Detected
+01000,24,Not Detected
+01000,27,Detected Good
+01000,29,Not Detected
+01000,30,Not Detected
+01000,32,Not Detected
+01000,35,Not Detected
+01000,38,Not Gen and Not Detected
+01000,39,Not Detected
+01000,44,Not Detected
+01000,45,Not Detected
+01000,47,Not Detected
+01000,51,Not Detected
+01000,53,Not Detected
+01000,59,Detected Good
+01000,60,Not Detected
+01000,62,Not Detected
+01000,66,Detected Good
+01000,70,Detected Good
+01000,71,Not Detected
+01000,75,Not Detected
+01000,80,Not Detected
+01000,82,Not Gen and Not Detected
+01000,84,Not Gen and Not Detected
+01000,86,Not Detected
+01000,89,Not Gen and Not Detected
+01000,96,Not Detected
+01000,98,Not Detected
+01000,99,Not Gen and Not Detected
+01100,12,Not Gen and Not Detected
+01100,13,Not Detected
+01100,15,Not Detected
+01100,16,Not Detected
+01100,17,Not Detected
+01100,21,Not Detected
+01100,24,Not Detected
+01100,27,Not Gen and Not Detected
+01100,28,Detected Good
+01100,34,Not Detected
+01100,39,Not Gen and Not Detected
+01100,40,Not Detected
+01100,44,Detected Good
+01100,47,Not Detected
+01100,48,Not Detected
+01100,52,Not Gen and Not Detected
+01100,56,Not Detected
+01100,58,Not Detected
+01100,62,Not Detected
+01100,63,Not Detected
+01100,65,Not Detected
+01100,67,Not Detected
+01100,70,Not Detected
+01100,81,Not Gen and Not Detected
+01100,87,Not Gen and Not Detected
+01100,89,Detected Good
+01100,90,Not Detected
+01100,91,Not Gen and Not Detected
+01100,93,Not Gen and Not Detected
+01200,2,Not Detected
+01200,3,Not Gen and Not Detected
+01200,4,Not Detected
+01200,11,Not Gen and Not Detected
+01200,13,Detected Good
+01200,16,Not Detected
+01200,20,Not Detected
+01200,26,Not Detected
+01200,28,Not Detected
+01200,31,Not Detected
+01200,32,Not Detected
+01200,38,Not Detected
+01200,46,Not Detected
+01200,49,Not Detected
+01200,50,Not Detected
+01200,52,Not Detected
+01200,54,Not Detected
+01200,55,Not Detected
+01200,57,Not Detected
+01200,60,Detected Good
+01200,61,Not Detected
+01200,71,Detected Good
+01200,73,Not Detected
+01200,76,Not Gen and Not Detected
+01200,85,Not Detected
+01200,86,Not Detected
+01200,92,Not Detected
+01200,93,Not Detected
+01200,94,Not Gen and Not Detected
+01200,96,Not Detected
+00000,0,Not Detected
+00000,4,Not Detected
+00000,5,Not Gen and Not Detected
+00000,7,Not Detected
+00000,12,Not Gen and Not Detected
+00000,21,Not Gen and Not Detected
+00000,22,Not Detected
+00000,23,Not Gen and Not Detected
+00000,25,Not Detected
+00000,30,Not Gen and Not Detected
+00000,32,Not Detected
+00000,35,Not Detected
+00000,36,Not Detected
+00000,37,Detected Good
+00000,38,Not Gen and Not Detected
+00000,43,Not Detected
+00000,44,Not Detected
+00000,48,Not Gen and Not Detected
+00000,49,Not Detected
+00000,50,Not Detected
+00000,55,Not Detected
+00000,57,Not Detected
+00000,61,Detected Good
+00000,63,Not Detected
+00000,75,Not Detected
+00000,79,Not Detected
+00000,80,Not Detected
+00000,81,Detected Good
+00000,82,Not Gen and Not Detected
+00000,83,Not Detected
+00000,93,Not Detected
+00000,94,Not Detected
+00000,97,Not Detected
+00000,99,Not Detected
+00100,0,Not Detected
+00100,1,Not Detected
+00100,2,Not Gen and Not Detected
+00100,4,Not Gen and Not Detected
+00100,7,Not Gen and Not Detected
+00100,8,Not Detected
+00100,9,Not Detected
+00100,15,Not Detected
+00100,19,Not Detected
+00100,23,Not Gen and Not Detected
+00100,29,Not Gen and Not Detected
+00100,31,Not Detected
+00100,39,Not Detected
+00100,41,Not Gen and Not Detected
+00100,44,Not Detected
+00100,46,Not Detected
+00100,47,Not Detected
+00100,51,Not Detected
+00100,55,Not Gen and Not Detected
+00100,56,Not Gen and Not Detected
+00100,60,Detected Good
+00100,62,Not Detected
+00100,67,Detected Good
+00100,68,Not Gen and Not Detected
+00100,71,Not Detected
+00100,73,Not Detected
+00100,80,Not Gen and Not Detected
+00100,82,Not Detected
+00100,86,Not Gen and Not Detected
+00100,88,Not Gen and Not Detected
+00100,89,Not Gen and Not Detected
+00100,90,Not Detected
+00100,92,Not Detected
+00100,96,Not Detected
+00100,99,Not Detected
+00200,2,Not Gen and Not Detected
+00200,3,Not Detected
+00200,6,Not Gen and Not Detected
+00200,8,Detected Good
+00200,9,Detected Good
+00200,10,Not Detected
+00200,13,Detected Good
+00200,18,Not Detected
+00200,21,Not Detected
+00200,22,Not Detected
+00200,23,Detected Good
+00200,24,Not Gen and Not Detected
+00200,26,Not Detected
+00200,33,Not Gen and Not Detected
+00200,35,Not Gen and Not Detected
+00200,36,Not Detected
+00200,37,Detected Good
+00200,44,Not Detected
+00200,45,Not Detected
+00200,47,Not Detected
+00200,51,Not Detected
+00200,57,Detected Good
+00200,62,Not Gen and Not Detected
+00200,63,Not Detected
+00200,68,Not Detected
+00200,70,Detected Good
+00200,72,Not Detected
+00200,73,Detected Good
+00200,76,Detected Good
+00200,79,Not Detected
+00200,80,Not Gen and Not Detected
+00200,81,Not Gen and Not Detected
+00200,82,Detected Good
+00200,84,Not Detected
+00200,88,False Positive
+00200,90,Not Detected
+00200,93,Not Detected
+00200,94,Not Detected
+00200,95,Not Detected
+00300,0,Not Detected
+00300,1,Not Detected
+00300,5,Not Detected
+00300,6,Not Detected
+00300,10,Not Detected
+00300,11,Not Detected
+00300,12,Not Detected
+00300,14,Not Detected
+00300,17,Not Gen and Not Detected
+00300,18,Not Detected
+00300,19,Not Gen and Not Detected
+00300,23,Detected Good
+00300,26,Not Detected
+00300,29,Detected Good
+00300,32,Not Detected
+00300,34,Not Gen and Not Detected
+00300,35,Detected Good
+00300,38,Detected Good
+00300,39,Not Detected
+00300,43,Not Detected
+00300,47,Not Detected
+00300,48,Not Detected
+00300,49,Not Detected
+00300,52,Not Gen and Not Detected
+00300,53,Not Gen and Not Detected
+00300,58,Not Gen and Not Detected
+00300,60,Not Gen and Not Detected
+00300,62,Not Detected
+00300,63,Not Gen and Not Detected
+00300,70,Detected Good
+00300,79,Not Detected
+00300,82,Not Detected
+00300,83,Not Detected
+00300,87,Not Detected
+00300,93,Not Detected
+00300,94,Not Detected
+00300,96,Not Detected
+00400,2,Not Gen and Not Detected
+00400,4,Not Gen and Not Detected
+00400,6,Not Detected
+00400,8,Detected Good
+00400,9,Not Gen and Not Detected
+00400,10,Not Detected
+00400,11,Detected Good
+00400,14,Not Gen and Not Detected
+00400,15,Detected Good
+00400,16,Not Detected
+00400,19,Not Detected
+00400,26,Not Detected
+00400,27,False Positive
+00400,28,Not Detected
+00400,33,Not Gen and Not Detected
+00400,44,Not Detected
+00400,45,Not Gen and Not Detected
+00400,49,Not Detected
+00400,50,Not Detected
+00400,51,Not Detected
+00400,54,Not Detected
+00400,61,Not Detected
+00400,62,Not Detected
+00400,63,Not Detected
+00400,65,Not Detected
+00400,66,Not Gen and Not Detected
+00400,68,Not Detected
+00400,72,Detected Good
+00400,73,Not Detected
+00400,74,Not Detected
+00400,76,Detected Good
+00400,80,Not Detected
+00400,81,Detected Good
+00400,83,Detected Good
+00400,84,Not Detected
+00400,86,Detected Good
