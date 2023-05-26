@@ -131,6 +131,11 @@ In this example I'm copying all the files in scripts in my computer to the scrip
 rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
 ```
 
+### Working on the server
+To edit files directly on the server I'm using *Visual Studio* with the extension *Remote-SSH*.
+
+Simply add the extension, access it via *Ctrl+Shift+P*, and connect to the server as usual.
+
 ## Deprecated Methods
 ### Automaticaly copying files Server <-> Local
 To keep this automated we can use *crontab*. To copy every 5 seconds run
