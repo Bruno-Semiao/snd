@@ -14,31 +14,14 @@ ssh bcaetano@lxplus.cern.ch
 Run the following commands to build the environment.
 
 ```
-source ~/private/SND/startAliBuild.sh && Run
+bash /afs/cern.ch/work/b/bcaetano/private/snd/startAliBuild.sh
 ```
 
-### Regular
-
-OLD WAY: Run the following commands to setup the environment (alienv).
-```
-source ~/private/SND/startup.sh && Run
-```
-NEW WAY:
-```
-source /cvmfs/sndlhc.cern.ch/SNDLHC-2023/Jan22/setUp.sh
-alienv enter sndsw/latest
-```
-
-
-### Exchanging files between Server and Local Cumputer
-
-To easily copy things from your computer to the server we can use *rsync*.
-In this example I'm copying all the files in scripts in my computer to the scripts folder in the server. The password to acess the server is stored in the file *cernP*. 
+### Regular (Run this everytime connecting to the server!)
 
 ```
-rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
+bash /afs/cern.ch/work/b/bcaetano/private/snd/startup.sh
 ```
-
 
 
 
@@ -141,6 +124,16 @@ loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = 3)
 To  copy plot to cumputer:
 ```
 rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" lxplus.cern.ch:/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/plots/00100 ~/Documents/images/ -a
+```
+
+## Useful Methods
+### Exchanging files between Server and Local Cumputer
+
+To easily copy things from your computer to the server we can use *rsync*.
+In this example I'm copying all the files in scripts in my computer to the scripts folder in the server. The password to acess the server is stored in the file *cernP*. 
+
+```
+rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" ~/Documents/SND/sndsw/shipLHC/scripts/* lxplus.cern.ch:~/private/SND/sndsw/shipLHC/scripts/
 ```
 
 ## Deprecated Methods
