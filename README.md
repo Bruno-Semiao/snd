@@ -1,5 +1,6 @@
 # SND@LHC
 Follow the instructions at [SND@LHC github](https://github.com/SND-LHC/sndsw) to install the software.
+
 All files mentioned are either in the collaboration software or in this repository.
 
 
@@ -26,62 +27,20 @@ bash /afs/cern.ch/work/b/bcaetano/private/snd/startup.sh
 
 
 
-## Running Basic Simulations
+## Running/Generating Simulations
+### Basic Simulations
 
 To simulate a proton colliding with the detector: (pID = 2212)
 ```
-python ../run_simSND.py --PG --pID 2212 -n 10 --Estart 10.0 --Eend 11.0 --EVx -26.0 --EVy 34.0 --EVz 280
+python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/run_simSND.py --PG --pID 2212 -n 10 --Estart 10.0 --Eend 11.0 --EVx -26.0 --EVy 34.0 --EVz 280
 ```
 
 Then digitize the data:
 ```
-python ../run_digiSND.py -g [geoFile] -f [inputFile]
+python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/run_digiSND.py -g [geoFile] -f [inputFile]
 ```
 
-
-
-## Getting Information
-
-### Geo Information
-To get geo information of the detector run:
-```
-python /macro/getGeoInformation.py -g [Geometry file] -l [Level of detail]
-```
-
-Currently using this geofile:
-```
-/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/Neutrino_Muon_up_14TeV_18576/00000/geofile_full.Genie-TGeant4.root
-```
-
-### Track Information
-Class defining the tracks can be found [here](https://github.com/SND-LHC/sndsw/blob/master/shipdata/ShipMCTrack.h).
-
-
-
-
-## Calculating Efficiencies
-
-Apply constraints in class Internships in file:
-```
-/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/UpdatedSurvey-MufiScifi.py
-```
-
-To run simulations do:
-```
-/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/GetWeightsForEff.sh
-```
-
-Finally use the file created in:
-```
-/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/DataDump/EventsData.csv
-```
-
-to calculate the percentages, code in file:
-```
-/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/scripts/CalculateEfficiencies.py
-```
-
-## Generating Simulations
+### More Complex Simulations
 
 Generate Geofile; generate gdml file:
 ```
@@ -91,6 +50,7 @@ root [2] geo->Export("geofile_sndlhc_TI18_V7.gdml")
 
 ```
 
+Generate only muon neutrinos (-14,14) in the Muon System:
 ```
 gevgen_fnal -f "/eos/experiment/sndlhc/MonteCarlo/FLUKA/neutrino_up_14TeV/SND_neutrinos_14TeV_20M_gsimple.root,,-14,14" -g /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/MoreResults_18kPlus/geofile_sndlhc_TI18_V7.gdml -t "+volMuFilter" -L "cm" -D "g_cm3" -e 2.0e18 -o genie_events --tune SNDG18_02a_01_000 --cross-sections /eos/experiment/sndlhc/MonteCarlo/Neutrinos/Genie/splines/genie_splines_GENIE_v32_SNDG18_02a_01_000.xml
 ```
@@ -103,29 +63,63 @@ addAuxiliaryToGST genie_events.0.ghep.root genie_events.gst.root
 
 Run simulation:
 ```
-python ~/private/SND/sndsw/shipLHC/run_simSND.py --Genie 4 -f ~/private/SND/sndsw/shipLHC/SimResults/genie_events.gst.root -i 0 -n 100
+python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/run_simSND.py --Genie 4 -f /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/genie_events.gst.root -i 0 -n 100
 ```
 
 Digitize data:
 ```
-python ~/private/SND/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.root -f sndLHC.Genie-TGeant4.root
+python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.root -f sndLHC.Genie-TGeant4.root
 ```
+
+
+## Getting Information
+
+### Geo Information
+To get geo information of the detector run:
+```
+python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/macro/getGeoInformation.py -g [Geometry file] -l [Level of detail]
+```
+
+
+
+## Calculating Efficiencies
+
+Apply constraints in class Internships in file:
+```
+/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/UpdatedSurvey-MufiScifi.py
+```
+
+To run simulations do:
+```
+/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/GetWeightsForEff.sh
+```
+
+Finally use the file that was created to calculate the percentages, by running:
+```
+/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/CalculateEfficiencies.py
+```
+
+
 
 ## Plotting Events
 Run:
 ```
 python -i /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/2dEventDisplay.py -p /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/00100/ -f sndLHC.Genie-TGeant4_dig.root -g /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/00100/geofile_full.Genie-TGeant4.root 
 ```
-Then: (withHoughTrack - New Method; withTrack - Old Method)
+Then: (withHoughTrack - Hough Method; withTrack - Simple Tracking Method)
 ```
 loopEvents(save=True, auto=True, start=0, withHoughTrack = 3, withTrack = 3)
 ```
 
 
-To  copy plot to cumputer:
+To  copy plot to cumputer: (Read section Useful Methods->Exchanging files between Server and Local Cumputer)
 ```
 rsync --rsh="sshpass -f /home/bruno/Documents/SND/cernP ssh -l bcaetano" lxplus.cern.ch:/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/scripts/plots/00100 ~/Documents/images/ -a
 ```
+
+
+
+
 
 ## Useful Methods
 ### Exchanging files between Server and Local Cumputer
