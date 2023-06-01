@@ -1367,175 +1367,129 @@ def GetBadParticles():
 
 
 
+def Internship2():
+    #Editable Parameters
+    is_category = False
+    path_data   = '/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsDataCheck.csv'
+    path_cat    = '/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsCatCheck.csv'
+    zmin        = 358.4387
+    zmax        = 468.4558 #First 4 Fe blocks  // 574.4321 #volMuFilter
+    ymin        = 17.1946
+    ymax        = 53.3685
+    xmin        = -46.1732
+    xmax        = -7.1379
 
+    #Fixed Parameters
+    gst_file               = options.initialGST
+    geometry_file_location = options.geoFile
+    DirectoryNumber        = options.fname.split("/")[-2]
+    EventCat   = -1
+    NEvent     = 0
+    is_break   = 0
+    is_muonGen = 0
+    is_muonDet = 0
+    is_wHeader = False
 
+    #Weights
+    WEvents = 0.0
+    WCorrectArea = 0.0
+    #Weights (INSIDE CORRECT AREA ONLY)
+    WMuonGen = 0.0
+    WMuonDet = 0.0
+    WFalsePositive = 0.0
+    WEfficiency = 0.0
 
+    print(f"\n\nWorking Directory: {DirectoryNumber}\n\n")
 
-
-
-
-
-def Internship():
-    print_type = 1 #-1 - Don't print; 0-All particles; 1-Get effeciency for muon neutrinos; 2-check coordinates for mID = -1 or 0; 3 - get FLUKA weights; 4 - MID == 0 o r-1; 5 - Detector Hit ID
-    zmin = 358.4387
-    #zmax = 574.4321 #volMuFilter
-    zmax = 468.4558#First 4 Fe blocks
-    #geometry_file_location = "/afs/cern.ch/user/b/bcaetano/public/SND/sndsw/shipLHC/SimResults/geofile_full.Pythia8-TGeant4.root"
-    ymin = 17.1946
-    ymax = 53.3685
-    xmin = -46.1732
-    xmax = -7.1379
-    #input_file = "/afs/cern.ch/user/b/bcaetano/public/SND/sndsw/shipLHC/SimResults/sndLHC.Pythia8-TGeant4_dig.root"
-
-    #geometry_file_location = "/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/neutrino_up_14TeV_restrains_Z/geofile_full.Genie-TGeant4.root"
-    #input_folders_path     = "/afs/cern.ch/user/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/neutrino_up_14TeV_restrains_Z/"
-
-    geometry_file_location = options.geoFile #"/afs/cern.ch/work/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/00000/geofile_full.Genie-TGeant4.root"
-    #input_folders_path     = "/afs/cern.ch/work/b/bcaetano/private/SND/sndsw/shipLHC/SimResults/00100/"
-
-
-    #___________________________EDIT ME___________________________
-    gst_file               = f"{options.initialGST}/sndlhc_+volMuFilter_0.1562e16_SNDG18_02a_01_000.0.gst.root"#"/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/genie_events.gst.root"
-    #print(f"\n\nGST:    {gst_file}\n\n")
-
-    #input_file_name        = "sndLHC.Genie-TGeant4_dig.root"
-    NEventsToCheck = 9999999
-    n_files_to_read = 1 #input files
-    EventCat = -1
-    #_____________________________#
-
-    #Geo file
+    #Check and load geo file
     if not exists(geometry_file_location):
             print("\n\nGeometry file not found!\n\n")
             exit()
-
     snd_geo = SndlhcGeo.GeoInterface(geometry_file_location)
 
+    #Check and load gst file
     if not exists(gst_file):
             print("\n\ngst file not found!\n\n")
             exit()
     gstsim = ROOT.TChain("gst")
     gstsim.Add(gst_file)
 
-    if print_type == 1:
-        counts = 0
-        #Counts
-        NEvents = 0
-        NCorrectArea = 0
-        #INSIDE CORRECT AREA AND:
-        NMuonGen = 0
-        NMuonDet = 0
-        NMuonGenDet = 0
+    #Get weights
+    FLUKA_weights = [0.0] * gstsim.GetEntries()
+    for id, event in enumerate(gstsim):
+        FLUKA_weights[id]=event.FLUKA_weight
 
+    #Loop through events in simulation file
+    for event, eventGST in zip(eventChain, FLUKA_weights):
+        if event.MCTrack[0].GetPdgCode() == 14 or event.MCTrack[0].GetPdgCode() == -14: #Only muon neutrinos
+            EventCat       = -1
+            is_break       = 0
+            is_muonGen     = 0
+            is_muonDet     = 0
+            WEvents        = 0.0
+            WCorrectArea   = 0.0
+            WMuonGen       = 0.0
+            WMuonDet       = 0.0
+            WFalsePositive = 0.0
+            WEfficiency    = 0.0
 
-
-        if not exists(gst_file):
-            print("\n\ngst file not found!\n\n")
-            exit()
-        gstsim = ROOT.TChain("gst")
-        gstsim.Add(gst_file)
-
-        i = initialGST.split("/")[-1]
-        print(i)
-        #gstsim = slice(int(i), int(i+99), 1)
-
-        #Get weights
-        FLUKA_weights = [0.0] * gstsim.GetEntries()
-        k = 0
-        for id, event in enumerate(gstsim):
-            #if id<int(i): continue
-            #if id>int(i)+99: break
-            FLUKA_weights[k]=event.FLUKA_weight
-            k+=1
-
-
-        for event, eventGST in zip(eventChain, FLUKA_weights): #Muon and area, muon, muon when was supposed
-            if event.MCTrack[0].GetPdgCode() == 14 or event.MCTrack[0].GetPdgCode() == -14:
-                EventCat = -1
-                is_break = 0
-                is_muonGen = 0
-                is_muonDet = 0
-
-                #Weights
-                WEvents = 0.0
-                WCorrectArea = 0.0
-                #INSIDE CORRECT AREA AND:
-                WMuonGen = 0.0
-                WMuonDet = 0.0
-                WFalsePositive = 0.0
-                WEfficiency = 0.0
-
-                NEvents+=1
-                WEvents+=eventGST
-                if event.MCTrack[0].GetStartX() >= xmin and event.MCTrack[0].GetStartX() <= xmax and event.MCTrack[0].GetStartY() >= ymin and event.MCTrack[0].GetStartY() <= ymax and event.MCTrack[0].GetStartZ() >= zmin and event.MCTrack[0].GetStartZ() <= zmax: #Check if in correct area
-                    WCorrectArea+=eventGST
-
-                    for index, particle in enumerate(event.MCTrack): #Check if muon is created
-                        if (particle.GetPdgCode() == 13 or particle.GetPdgCode() == -13) and particle.GetMotherId() == 0:
-                            is_muonGen = 1
-                        if index >= 30:
-                            break
-                    if is_muonGen == 1:
-                        WMuonGen+=eventGST #Muon created in simulation
-
-                    Nev = 999999
-                    withReco = True
-                    optionTrack='DS'
-                    rc = eventTree.GetEvent(NEvents-1)
-                    if NEvents-1>Nev: break
-                    if withReco:
-                        for aTrack in Reco_MuonTracks: aTrack.Delete()
-                        Reco_MuonTracks.Clear()
-                        if optionTrack=='DS': rc = trackTask.ExecuteTask("DS")
-                        else                         : rc = trackTask.ExecuteTask("Scifi")
-                    if  Reco_MuonTracks.GetEntries()==1:
-                        #print("\nMuon Detected")
-                        theTrack = Reco_MuonTracks[0]
-                        is_muonDet = 1
-                        WMuonDet+=eventGST
-
-                    
-
-                    with open('/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsCatCol.csv', 'a', encoding='UTF8') as f:
-                        writer = csv.writer(f)
-                        if not exists('EventsCatCol.csv'):
-                            writer.writerow(["File", "Number", "Category"])
-
-                        if is_muonGen:
-                            if is_muonDet:
-                                WEfficiency+=eventGST
-                                #print(f"\n\n\n\n{eventGST}\n\n\n\n")
-                                writer.writerow([i, NEvents-1, "Detected Good"])
-                                #print(f"{NEvents-1}: Detected Good")
-
-                        if not is_muonDet:
-                            if is_muonGen:
-                                writer.writerow([i, NEvents-1, "Not Detected"])
-                                #print(f"{NEvents-1}: Not Detected")
-
-                        if is_muonDet:
-                            if not is_muonGen:
-                                WFalsePositive+=eventGST
-                                writer.writerow([i, NEvents-1, "False Positive"])
-                                #print(f"{NEvents-1}: False Positive-------------------------------------------------------------")
-
-                        if not is_muonDet and not is_muonGen:
-                            writer.writerow([i, NEvents-1, "Not Gen and Not Detected"])
-                            #print(f"{NEvents-1}: Not Gen and Not Detected")       
-
-                if not exists('/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsDataColC.csv'):
-                    wHeader = 1
-                else:
-                    wHeader = 0
-                with open('/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsDataColC.csv', 'a', encoding='UTF8') as f:
-                    writer = csv.writer(f)
-                    if wHeader == 1:
-                        writer.writerow(["Total", "Correct Area", "Muon Gen (in Area)",  "Muon Det (in Area)", "Eff - Muon Det if when Gen (in Area)", "False Positive - Muon Not Gen when Det (In Area)", "x", "y", "z", "E"])
-                    writer.writerow([WEvents, WCorrectArea, WMuonGen, WMuonDet, WEfficiency, WFalsePositive, event.MCTrack[0].GetStartX(), event.MCTrack[0].GetStartY(), event.MCTrack[0].GetStartZ(), event.MCTrack[0].GetEnergy()])
-
+            NEvent  += 1
+            WEvents += eventGST
+            
+            #Limit correct area
+            if event.MCTrack[0].GetStartZ() >= zmin and event.MCTrack[0].GetStartZ() <= zmax:
+            #if event.MCTrack[0].GetStartX() >= xmin and event.MCTrack[0].GetStartX() <= xmax and event.MCTrack[0].GetStartY() >= ymin and event.MCTrack[0].GetStartY() <= ymax and event.MCTrack[0].GetStartZ() >= zmin and event.MCTrack[0].GetStartZ() <= zmax:
+                WCorrectArea += eventGST
                 
+                #Check if muon was created in the simulation
+                for index, particle in enumerate(event.MCTrack):
+                    if (particle.GetPdgCode() == 13 or particle.GetPdgCode() == -13) and particle.GetMotherId() == 0:
+                        is_muonGen = 1
+                    if index >= 100:
+                        break
+                if is_muonGen == 1:
+                    WMuonGen+=eventGST
 
-        
+                #Check if muon was detected by software
+                rc = eventTree.GetEvent(NEvent-1)
+                for aTrack in Reco_MuonTracks: aTrack.Delete()
+                Reco_MuonTracks.Clear()
+                rc = trackTask.ExecuteTask("DS")
+                if  Reco_MuonTracks.GetEntries()==1:
+                    theTrack    = Reco_MuonTracks[0]
+                    is_muonDet  = 1
+                    WMuonDet   += eventGST
+                
+                #Get Good Events and False Positives // Categorize each event
+                with open(path_cat, 'a', encoding='UTF8') as f:
+                    writer = csv.writer(f)
+                    if not exists(path_cat):
+                        if is_category: writer.writerow(["File", "Number", "Category"])
+
+                    if is_muonGen and is_muonDet:
+                        WEfficiency+=eventGST
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Correctly Identified"])
+
+                    if not is_muonDet and is_muonGen:
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Not Detected"])
+
+                    if is_muonDet and not is_muonGen:
+                        WFalsePositive+=eventGST
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "False Positive"])
+
+                    if not is_muonDet and not is_muonGen:
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Not Gen and Not Detected"])     
+
+            #Store relevant simulation data
+            if not exists(path_data):
+                is_wHeader = True
+            else:
+                is_wHeader = False
+            with open(path_data, 'a', encoding='UTF8') as f:
+                writer = csv.writer(f)
+                if is_wHeader:
+                    writer.writerow(["Total", "Correct Area", "Muon Gen (in Area)",  "Muon Det (in Area)", "Eff - Muon Det if Gen (in Area)", "False Positive - Muon Not Gen when Det (In Area)", "x", "y", "z", "E"])
+                writer.writerow([WEvents, WCorrectArea, WMuonGen, WMuonDet, WEfficiency, WFalsePositive, event.MCTrack[0].GetStartX(), event.MCTrack[0].GetStartY(), event.MCTrack[0].GetStartZ(), event.MCTrack[0].GetEnergy()])
     return 0
 
 
@@ -1543,12 +1497,129 @@ def Internship():
 
 
 
+def Internship():
+    #Editable Parameters
+    is_category = False
+    path_data   = '/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsDataJunCol.csv'
+    path_cat    = '/afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/SimResults/EventsCatJunCol.csv'
+    zmin        = 358.4387
+    zmax        = 468.4558 #First 4 Fe blocks  // 574.4321 #volMuFilter
+    ymin        = 17.1946
+    ymax        = 53.3685
+    xmin        = -46.1732
+    xmax        = -7.1379
 
+    #Fixed Parameters
+    gst_file               = options.initialGST
+    geometry_file_location = options.geoFile
+    DirectoryNumber        = options.fname.split("/")[-2]
+    EventCat   = -1
+    NEvent     = 0
+    is_break   = 0
+    is_muonGen = 0
+    is_muonDet = 0
+    is_wHeader = False
 
+    #Weights
+    WEvents = 0.0
+    WCorrectArea = 0.0
+    #Weights (INSIDE CORRECT AREA ONLY)
+    WMuonGen = 0.0
+    WMuonDet = 0.0
+    WFalsePositive = 0.0
+    WEfficiency = 0.0
 
+    print(f"\n\nWorking Directory: {DirectoryNumber}\n\n")
 
+    #Check and load geo file
+    if not exists(geometry_file_location):
+            print("\n\nGeometry file not found!\n\n")
+            exit()
+    snd_geo = SndlhcGeo.GeoInterface(geometry_file_location)
 
+    #Check and load gst file
+    if not exists(gst_file):
+            print("\n\ngst file not found!\n\n")
+            exit()
+    gstsim = ROOT.TChain("gst")
+    gstsim.Add(gst_file)
 
+    #Get weights
+    FLUKA_weights = [0.0] * gstsim.GetEntries()
+    for id, event in enumerate(gstsim):
+        FLUKA_weights[id]=event.FLUKA_weight
+
+    #Loop through events in simulation file
+    for event, eventGST in zip(eventChain, FLUKA_weights):
+        if event.MCTrack[0].GetPdgCode() == 14 or event.MCTrack[0].GetPdgCode() == -14: #Only muon neutrinos
+            EventCat       = -1
+            is_break       = 0
+            is_muonGen     = 0
+            is_muonDet     = 0
+            WEvents        = 0.0
+            WCorrectArea   = 0.0
+            WMuonGen       = 0.0
+            WMuonDet       = 0.0
+            WFalsePositive = 0.0
+            WEfficiency    = 0.0
+
+            NEvent  += 1
+            WEvents += eventGST
+            
+            #Limit correct area
+            if event.MCTrack[0].GetStartX() >= xmin and event.MCTrack[0].GetStartX() <= xmax and event.MCTrack[0].GetStartY() >= ymin and event.MCTrack[0].GetStartY() <= ymax and event.MCTrack[0].GetStartZ() >= zmin and event.MCTrack[0].GetStartZ() <= zmax:
+                WCorrectArea += eventGST
+                
+                #Check if muon was created in the simulation
+                for index, particle in enumerate(event.MCTrack):
+                    if (particle.GetPdgCode() == 13 or particle.GetPdgCode() == -13) and particle.GetMotherId() == 0:
+                        is_muonGen = 1
+                    if index >= 100:
+                        break
+                if is_muonGen == 1:
+                    WMuonGen+=eventGST
+
+                #Check if muon was detected by software
+                rc = eventTree.GetEvent(NEvent-1)
+                for aTrack in Reco_MuonTracks: aTrack.Delete()
+                Reco_MuonTracks.Clear()
+                rc = trackTask.ExecuteTask("DS")
+                if  Reco_MuonTracks.GetEntries()==1:
+                    theTrack    = Reco_MuonTracks[0]
+                    is_muonDet  = 1
+                    WMuonDet   += eventGST
+                
+                #Get Good Events and False Positives // Categorize each event
+                with open(path_cat, 'a', encoding='UTF8') as f:
+                    writer = csv.writer(f)
+                    if not exists(path_cat):
+                        if is_category: writer.writerow(["File", "Number", "Category"])
+
+                    if is_muonGen and is_muonDet:
+                        WEfficiency+=eventGST
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Correctly Identified"])
+
+                    if not is_muonDet and is_muonGen:
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Not Detected"])
+
+                    if is_muonDet and not is_muonGen:
+                        WFalsePositive+=eventGST
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "False Positive"])
+
+                    if not is_muonDet and not is_muonGen:
+                        if is_category: writer.writerow([DirectoryNumber, NEvent-1, "Not Gen and Not Detected"])     
+
+            #Store relevant simulation data
+            if not exists(path_data):
+                is_wHeader = True
+            else:
+                is_wHeader = False
+            with open(path_data, 'a', encoding='UTF8') as f:
+                writer = csv.writer(f)
+                if is_wHeader:
+                    writer.writerow(["Total", "Correct Area", "Muon Gen (in Area)",  "Muon Det (in Area)", "Eff - Muon Det if Gen (in Area)", "False Positive - Muon Not Gen when Det (In Area)", "x", "y", "z", "E"])
+                writer.writerow([WEvents, WCorrectArea, WMuonGen, WMuonDet, WEfficiency, WFalsePositive, event.MCTrack[0].GetStartX(), event.MCTrack[0].GetStartY(), event.MCTrack[0].GetStartZ(), event.MCTrack[0].GetEnergy()])
+    return 0
 
 
 

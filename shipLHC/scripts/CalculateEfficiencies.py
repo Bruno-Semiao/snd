@@ -20,7 +20,7 @@ WEfficiency = 0.0
 
 
 #Read file
-with open("EventsDataColC.csv", "r") as f:
+with open("../SimResults/EventsDataAlternative.csv", "r") as f:
     reader = reader(f)
     header = next(reader)       #Ignore header
     if header != None:
