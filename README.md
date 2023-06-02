@@ -71,6 +71,7 @@ Digitize data:
 python /afs/cern.ch/work/b/bcaetano/private/snd/sndsw/shipLHC/run_digiSND.py -g geofile_full.Genie-TGeant4.root -f sndLHC.Genie-TGeant4.root
 ```
 
+[More information can be found here.](https://twiki.cern.ch/twiki/bin/viewauth/SndLHC/NeutrinoInteractionEventsWithGENIE)
 
 ## Getting Information
 
